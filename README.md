@@ -1,6 +1,6 @@
 # Property connector with channel name
 
-## This library is maybe not a good practice and you can probably make it by yourself
+##### This library is maybe not a good practice and you can probably make it by yourself
 
 ### @Connector(channel_name)
 
@@ -18,41 +18,48 @@
 import Connector from "property-connector";
 
 class Bar {
-
-  @Connector('toto')
-  test2: Subject<any> | undefined
+  @Connector('users')
+  users: Subject<any> | undefined
 }
-
-
 
 class Foo {
-
-  @Connector('toto')
-  test1: Subject<any> | undefined
+  @Connector('users')
+  users: Subject<any> | undefined
 }
 
+let foo = new Foo()
+foo.users?.subscribe((next) => console.log(next))
+
+let bar = new Bar()
+bar.users?.next({
+  name: "John"
+})
 
 
 class Zerg {
+  @Connector('login')
+  loginEvent: Subject<any> | undefined
 
-  @Connector('toto')
-  test1: Subject<any> | undefined
+  login(mail: string, pass: string) {
+    this.loginEvent?.next({mail, pass})
+  }
 }
 
+class Log {
+  @Connector('login')
+  loginEvent: Subject<any> | undefined
+}
 
-let foo = new Foo()
-foo.test1?.subscribe((next) => console.log(next))
-
-let bar = new Bar()
-bar.test2?.next("gogo2")
+let log = new Log()
+log.loginEvent?.subscribe(log => console.log(log))
 
 let zerg = new Zerg()
-zerg.test1?.next("gogo1")
+zerg.login("test@test.fr", "password")
 ```
 
 ### Result
 ```bash
   npm run dev
-  gogo2
-  gogo1
+    { name: 'John' }
+    { mail: 'test@test.fr', pass: 'password' }
 ```
