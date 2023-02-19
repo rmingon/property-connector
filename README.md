@@ -4,10 +4,6 @@
 
 ### @Connector(channel_name)
 
-- TODO
-- [ ] Inject type 
-- [ ] emit value of property
-
 ### Install
 ```bash
    npm i property-connector
