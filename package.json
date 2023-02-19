@@ -1,0 +1,30 @@
+{
+  "name": "property-connector",
+  "version": "0.0.1",
+  "description": "Just a decorator for connect with subject and transform properties in observable on multiple channels.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build" : "tsc",
+    "prepare" : "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmingon/property-connector.git"
+  },
+  "keywords": ["decorator", "subject"],
+  "author": "RMINGON",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmingon/property-connector/issues"
+  },
+  "homepage": "https://github.com/rmingon/property-connector#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.0"
+  },
+  "files": ["lib/**/*"],
+  "types": "lib/index.d.ts"
+}
