@@ -1,18 +1,17 @@
 {
   "name": "property-connector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Just a decorator for connect with subject and transform properties in observable on multiple channels.",
   "main": "lib/index.js",
   "scripts": {
     "build" : "tsc",
-    "prepare" : "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare" : "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rmingon/property-connector.git"
   },
-  "keywords": ["decorator", "subject"],
+  "keywords": ["decorator", "subject", "observable"],
   "author": "RMINGON",
   "license": "ISC",
   "bugs": {
