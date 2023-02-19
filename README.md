@@ -1,11 +1,19 @@
 # Property connector with channel name
 
-### @Connector(name)
+## This library is maybe not a good practice and you can probably make it by yourself
 
+### @Connector(channel_name)
+
+- TODO
+- [ ] Inject type 
+- [ ] emit value of property
+
+### Install
 ```bash
    npm i property-connector
 ```
 
+### Use
 ```typescript
 import Connector from "property-connector";
 
@@ -42,6 +50,7 @@ let zerg = new Zerg()
 zerg.test1?.next("gogo1")
 ```
 
+### Result
 ```bash
   npm run dev
   gogo2
